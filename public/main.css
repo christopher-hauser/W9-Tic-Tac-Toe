@@ -1,1 +1,93 @@
-/* Your code here */
+body {
+    margin: 5% 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    display: none;
+    text-align: center;
+}
+
+#button-container {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    width: 600px;
+}
+
+
+#playing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "a b c"
+        "d e f"
+        "g h i";
+    width: 600px;
+    height: 600px;
+    justify-content: center;
+
+}
+
+#space1 {
+    grid-area: a;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 200px;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+}
+#space2 {
+    grid-area: b;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+#space3 {
+    grid-area: c;
+    border-bottom: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+#space4 {
+    grid-area: d;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+#space5 {
+    grid-area: e;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+#space6 {
+    grid-area: f;
+    border-bottom: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+#space7 {
+    grid-area: g;
+    border-right: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+#space8 {
+    grid-area: h;
+    border-right: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+#space9 {
+    grid-area: i;
+    height: 200px;
+    width: 200px;
+}
