@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", e => {
     // Track the clicks of the players
-    let winner = null;
+    // let winner = null;
     let turnCount = 1;
 
     const space1 = document.getElementById("space1")
@@ -20,10 +20,12 @@ document.addEventListener("DOMContentLoaded", e => {
     space2.addEventListener("click", e => {
         if (turnCount % 2 === 1 && !space2.style["background-image"]) {
             turnCount++;
+            checkWinner();
             space2.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg')")
         } else if (turnCount % 2 === 0 && !space2.style["background-image"]) {
             turnCount++;
             space2.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg')")
+            checkWinner();
         }
     })
 
@@ -31,10 +33,12 @@ document.addEventListener("DOMContentLoaded", e => {
     space3.addEventListener("click", e => {
         if (turnCount % 2 === 1 && !space3.style["background-image"]) {
             turnCount++;
+            checkWinner();
             space3.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg')")
         } else if (turnCount % 2 === 0 && !space3.style["background-image"]) {
             turnCount++;
             space3.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg')")
+            checkWinner();
         }
     })
 
@@ -43,9 +47,11 @@ document.addEventListener("DOMContentLoaded", e => {
         if (turnCount % 2 === 1 && !space4.style["background-image"]) {
             turnCount++;
             space4.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg')")
+            checkWinner();
         } else if (turnCount % 2 === 0 && !space4.style["background-image"]) {
             turnCount++;
             space4.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg')")
+            checkWinner();
         }
     })
 
@@ -54,9 +60,11 @@ document.addEventListener("DOMContentLoaded", e => {
         if (turnCount % 2 === 1 && !space5.style["background-image"]) {
             turnCount++;
             space5.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg')")
+            checkWinner();
         } else if (turnCount % 2 === 0 && !space5.style["background-image"]) {
             turnCount++;
             space5.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg')")
+            checkWinner();
         }
     })
 
@@ -65,9 +73,11 @@ document.addEventListener("DOMContentLoaded", e => {
         if (turnCount % 2 === 1 && !space6.style["background-image"]) {
             turnCount++;
             space6.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg')")
+            checkWinner();
         } else if (turnCount % 2 === 0 && !space6.style["background-image"]) {
             turnCount++;
             space6.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg')")
+            checkWinner();
         }
     })
 
@@ -76,9 +86,11 @@ document.addEventListener("DOMContentLoaded", e => {
         if (turnCount % 2 === 1 && !space7.style["background-image"]) {
             turnCount++;
             space7.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg')")
+            checkWinner();
         } else if (turnCount % 2 === 0 && !space7.style["background-image"]) {
             turnCount++;
             space7.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg')")
+            checkWinner();
         }
     })
 
@@ -87,9 +99,11 @@ document.addEventListener("DOMContentLoaded", e => {
         if (turnCount % 2 === 1 && !space8.style["background-image"]) {
             turnCount++;
             space8.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg')")
+            checkWinner();
         } else if (turnCount % 2 === 0 && !space8.style["background-image"]) {
             turnCount++;
             space8.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg')")
+            checkWinner();
         }
     })
 
@@ -98,9 +112,11 @@ document.addEventListener("DOMContentLoaded", e => {
         if (turnCount % 2 === 1 && !space9.style["background-image"]) {
             turnCount++;
             space9.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg')")
+            checkWinner();
         } else if (turnCount % 2 === 0 && !space9.style["background-image"]) {
             turnCount++;
             space9.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg')")
+            checkWinner();
         }
     })
 })
@@ -110,11 +126,10 @@ const checkWinner = () => {
     //ROWS
     // 1, 2, 3
     if (space1.style["background-image"] === space2.style["background-image"] && space2.style["background-image"] === space3.style["background-image"]) {
-        console.log(space1.style["background-image"]);
         if (space1.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg")') {
             winner = "X";
             setHeader();
-        } else {
+        } else if (space1.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg")') {
             winner = "O";
             setHeader();
         }
@@ -124,7 +139,7 @@ const checkWinner = () => {
         if (space4.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg")') {
             winner = "X";
             setHeader();
-        } else {
+        } else if (space4.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg")') {
             winner = "O";
             setHeader();
         }
@@ -134,7 +149,7 @@ const checkWinner = () => {
         if (space7.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg")') {
             winner = "X";
             setHeader();
-        } else {
+        } else if (space7.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg")') {
             winner = "O";
             setHeader();
         }
@@ -145,7 +160,7 @@ const checkWinner = () => {
         if (space1.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg")') {
             winner = "X";
             setHeader();
-        } else {
+        } else if (space1.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg")') {
             winner = "O";
             setHeader();
         }
@@ -156,7 +171,7 @@ const checkWinner = () => {
         if (space2.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg")') {
             winner = "X";
             setHeader();
-        } else {
+        } else if (space2.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg")') {
             winner = "O";
             setHeader();
         }
@@ -167,7 +182,7 @@ const checkWinner = () => {
         if (space3.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg")') {
             winner = "X";
             setHeader();
-        } else {
+        } else if (space3.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg")') {
             winner = "O";
             setHeader();
         }
@@ -180,17 +195,20 @@ const checkWinner = () => {
         if (space1.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg")') {
             winner = "X";
             setHeader();
-        } else {
+        } else if (space1.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg")') {
             winner = "O";
             setHeader();
         }
     }
     //3, 5, 7
     if (space3.style["background-image"] === space5.style["background-image"] && space5.style["background-image"] === space7.style["background-image"]) {
+        console.log(space3.style["background-image"])
+        console.log(space5.style["background-image"])
+        console.log(space7.style["background-image"])
         if (space3.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg")') {
             winner = "X";
             setHeader();
-        } else {
+        } else if (space3.style["background-image"] === 'url("https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg")') {
             winner = "O";
             setHeader();
         }
@@ -198,10 +216,8 @@ const checkWinner = () => {
 }
 
 
-
-
 const setHeader = () => {
     const header = document.getElementById("winner");
-        header.style["display"] = "block";
-        header.innerText += winner;
+    header.style["display"] = "block";
+    header.innerText += winner;
 }
