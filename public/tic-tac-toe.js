@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", e => {
 
     const space1 = document.getElementById("space1")
     space1.addEventListener("click", e => {
-        if (turnCount % 2 === 1 && ) {
+        if (turnCount % 2 === 1) {
             space1.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg')")
         } else if (turnCount % 2 === 0) {
             space1.style = ("background-image: url('https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg')")
-        } else{
+        } else {
             break;
         }
         turnCount++;
